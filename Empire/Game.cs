@@ -18,7 +18,8 @@ namespace Empire
 		public List<Citizens> allCitizens;
 		public List<Event> events;
 		public double eventProb;
-		public int indexOfKnights;
+		public readonly int indexOfKnights;
+		public readonly int indexOfBuilders;
 
 		public Game()
 		{
@@ -29,6 +30,8 @@ namespace Empire
 			events = new List<Event>();
 			AddEvents();
 			eventProb = 0.35;
+
+			indexOfBuilders = 5;
 			indexOfKnights = 6;
 		}
 
@@ -133,14 +136,15 @@ namespace Empire
 		/// </summary>
 		public void UpdateWeekRequisition()
 		{
-			weekRequisition[0] = Program.random.Next(3000, 5001); // requisition for gold
-			weekRequisition[1] = Program.random.Next(1500, 1801); //requisition for wood
-			weekRequisition[2] = Program.random.Next(1900, 2601); // requisition for ores
-			weekRequisition[3] = Program.random.Next(Program.player.Population * 7, Program.player.Population * 8); //requisition for meat
-			weekRequisition[4] = Program.random.Next(Program.player.Population * 8, Program.player.Population * 10); //requisition for bread
-			weekRequisition[5] = Program.random.Next(2500, 3333); //requisition for nails
-			weekRequisition[6] = Program.random.Next(50, 91); //requisition for tools
-															  //TODO add += dla pozostalych tygodni
+			weekRequisition[0] += Program.random.Next(3000, 5001); // requisition for gold
+			weekRequisition[1] += Program.random.Next(1500, 1801); //requisition for wood
+			weekRequisition[2] += Program.random.Next(1900, 2601); // requisition for ores
+			weekRequisition[3] += Program.random.Next(Program.player.Population * 7, Program.player.Population * 8); //requisition for meat
+			weekRequisition[4] += Program.random.Next(Program.player.Population * 8, Program.player.Population * 10); //requisition for bread
+			weekRequisition[5] += Program.random.Next(2500, 3333); //requisition for nails
+			weekRequisition[6] += Program.random.Next(50, 91); //requisition for tools
+															   //TODO add += dla pozostalych tygodni
+															   //TODO ustawić stałe indexy, pozbyć się magic numbers
 		}
 
 		/// <summary>
@@ -169,28 +173,38 @@ namespace Empire
 				{
 					((IResourceProvider)citizensGroup).AddResources();
 				}
+
 				if (citizensGroup is IService)
 				{
-					if ((Program.player.NumberOfDays % 7) == 1)
-					{
-						((IService)citizensGroup).FinishService();
-						if (Program.player.morale > 0)
-						{
-							Program.player.Population += Program.player.morale * 4;
-						}
-						else
-						{
-							Program.player.Population -= Program.player.morale * 3;
-						}
-					}
-
 					((IService)citizensGroup).Hire();
+				}
+
+				if ((Program.player.NumberOfDays % 7) == 1)
+				{
+					FinishWeek();
 				}
 
 				citizensGroup.NumberOfMembers = 0;
 			}
 
 			PerformEventIfNeeded();
+		}
+
+		private void FinishWeek()
+		{
+			((Builders)allCitizens[indexOfBuilders]).FinishService();
+			((Knights)allCitizens[indexOfKnights]).FinishService();
+
+			UpdateWeekRequisition();
+
+			if (Program.player.morale > 0)
+			{
+				Program.player.Population += Program.player.morale * 4;
+			}
+			else
+			{
+				Program.player.Population -= Math.Abs(Program.player.morale * 3);
+			}
 		}
 
 		/// <summary>

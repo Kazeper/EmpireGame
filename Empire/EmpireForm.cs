@@ -101,7 +101,9 @@ namespace Empire
 			labelDefensiveWall.Text = defensiveWall.ToString() + "%";
 			labelMoralePoints.Text = Program.player.morale.ToString();
 
-			if (Program.player.hiredBuilders > 0)
+			bool ableToRepair = (Program.player.hiredBuilders > 0) && (Program.player.DefensiveWallPoints < 1000);
+
+			if (ableToRepair)
 			{
 				buttonRepairWall.Visible = true;
 			}
