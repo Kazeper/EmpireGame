@@ -19,6 +19,7 @@ namespace Empire
 		{
 			InitializeComponent();
 			counter = 0;
+			MessageBox.Show("Twoje królestwo zostało zaatakowane!" + Environment.NewLine + " Broń się!    (klikaj w przeciwnika :))");
 			point = new Point();
 			point.Y = 21;
 			timerMain.Interval = Program.player.hiredKnights * 1500;
@@ -53,6 +54,8 @@ namespace Empire
 			timerMain.Stop();
 			pictureBoxFight.Visible = true;
 			pictureBoxEnemy.Visible = false;
+			labelCounter.Visible = false;
+			labelCounterInfo.Visible = false;
 			timerShowFight.Start();
 		}
 

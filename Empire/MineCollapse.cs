@@ -16,7 +16,7 @@ namespace Empire
 		public override string ShowInfo()
 		{
 			double destroyPercentage = DestroyResource();
-			string info = "O nie! Przez zawalenie się kopalni straciłeś " + destroyPercentage * 100 + "% zasobów rudy oraz morale";
+			string info = "O nie! Przez zawalenie się kopalni straciłeś " + destroyPercentage + "% zasobów rudy oraz morale";
 			return info;
 		}
 

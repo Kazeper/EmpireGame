@@ -17,7 +17,7 @@ namespace Empire
 			this.minimalTaxBase = 5;
 			this.maximalTaxBase = 10;
 			this.taxBase = Program.random.Next(this.minimalTaxBase, this.maximalTaxBase + 1) - taxOffset;
-			nailsFactor = 50;
+			nailsFactor = 80;
 			toolsFactor = 1;
 		}
 

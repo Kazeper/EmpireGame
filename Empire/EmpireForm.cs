@@ -42,14 +42,6 @@ namespace Empire
 			indexOfBuilders = 5;
 			indexOfKnights = 6;
 			dayTime = 0;
-
-			labelGoldPerDay.ForeColor = Color.Green;
-			labelWoodPerDay.ForeColor = Color.Green;
-			labelOrePerDay.ForeColor = Color.Green;
-			labelNailsPerDay.ForeColor = Color.Green;
-			labelToolsPerDay.ForeColor = Color.Green;
-			labelMeatPerDay.ForeColor = Color.Green;
-			labelBreadPerDay.ForeColor = Color.Green;
 		}
 
 		/// <summary>
@@ -388,6 +380,7 @@ namespace Empire
 		public void CheckWeekCheckBox(int numberOfDays)
 		{
 			weekCheckBox[(int)Math.Floor((Convert.ToDouble(numberOfDays - 1)) / 7)].Checked = true;
+			//TODO gdy konczy sie tydzeń zakonczyć grę
 		}
 
 		/// <summary>
@@ -602,6 +595,7 @@ namespace Empire
 			dayTime = 0;
 			ResetTasks();
 			DisplayPlayerResources();
+			DisplayRequisition();
 			CheckWeekCheckBox(Program.player.NumberOfDays);
 			timerDay.Start();
 		}

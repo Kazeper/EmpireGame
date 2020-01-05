@@ -866,7 +866,7 @@
 			this.labelWeekInfo.BackColor = System.Drawing.Color.Transparent;
 			this.labelWeekInfo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelWeekInfo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.labelWeekInfo.Location = new System.Drawing.Point(748, 602);
+			this.labelWeekInfo.Location = new System.Drawing.Point(590, 599);
 			this.labelWeekInfo.Name = "labelWeekInfo";
 			this.labelWeekInfo.Size = new System.Drawing.Size(210, 19);
 			this.labelWeekInfo.TabIndex = 42;
@@ -878,7 +878,7 @@
 			this.labelMonthInfo.BackColor = System.Drawing.Color.Transparent;
 			this.labelMonthInfo.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelMonthInfo.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.labelMonthInfo.Location = new System.Drawing.Point(748, 631);
+			this.labelMonthInfo.Location = new System.Drawing.Point(590, 628);
 			this.labelMonthInfo.Name = "labelMonthInfo";
 			this.labelMonthInfo.Size = new System.Drawing.Size(203, 19);
 			this.labelMonthInfo.TabIndex = 43;
@@ -889,7 +889,7 @@
 			this.labelGoldPerDay.AutoSize = true;
 			this.labelGoldPerDay.BackColor = System.Drawing.Color.Transparent;
 			this.labelGoldPerDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelGoldPerDay.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.labelGoldPerDay.ForeColor = System.Drawing.Color.GreenYellow;
 			this.labelGoldPerDay.Location = new System.Drawing.Point(12, 596);
 			this.labelGoldPerDay.Name = "labelGoldPerDay";
 			this.labelGoldPerDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -902,7 +902,7 @@
 			this.labelWoodPerDay.AutoSize = true;
 			this.labelWoodPerDay.BackColor = System.Drawing.Color.Transparent;
 			this.labelWoodPerDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelWoodPerDay.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.labelWoodPerDay.ForeColor = System.Drawing.Color.GreenYellow;
 			this.labelWoodPerDay.Location = new System.Drawing.Point(101, 596);
 			this.labelWoodPerDay.Name = "labelWoodPerDay";
 			this.labelWoodPerDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -915,7 +915,7 @@
 			this.labelOrePerDay.AutoSize = true;
 			this.labelOrePerDay.BackColor = System.Drawing.Color.Transparent;
 			this.labelOrePerDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelOrePerDay.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.labelOrePerDay.ForeColor = System.Drawing.Color.GreenYellow;
 			this.labelOrePerDay.Location = new System.Drawing.Point(182, 596);
 			this.labelOrePerDay.Name = "labelOrePerDay";
 			this.labelOrePerDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -929,7 +929,7 @@
 			this.labelMeatPerDay.AutoSize = true;
 			this.labelMeatPerDay.BackColor = System.Drawing.Color.Transparent;
 			this.labelMeatPerDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelMeatPerDay.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.labelMeatPerDay.ForeColor = System.Drawing.Color.GreenYellow;
 			this.labelMeatPerDay.Location = new System.Drawing.Point(264, 596);
 			this.labelMeatPerDay.Name = "labelMeatPerDay";
 			this.labelMeatPerDay.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -942,7 +942,7 @@
 			this.labelBreadPerDay.AutoSize = true;
 			this.labelBreadPerDay.BackColor = System.Drawing.Color.Transparent;
 			this.labelBreadPerDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelBreadPerDay.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.labelBreadPerDay.ForeColor = System.Drawing.Color.GreenYellow;
 			this.labelBreadPerDay.Location = new System.Drawing.Point(348, 596);
 			this.labelBreadPerDay.Name = "labelBreadPerDay";
 			this.labelBreadPerDay.Size = new System.Drawing.Size(17, 18);
@@ -955,7 +955,7 @@
 			this.labelNailsPerDay.AutoSize = true;
 			this.labelNailsPerDay.BackColor = System.Drawing.Color.Transparent;
 			this.labelNailsPerDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelNailsPerDay.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.labelNailsPerDay.ForeColor = System.Drawing.Color.GreenYellow;
 			this.labelNailsPerDay.Location = new System.Drawing.Point(436, 596);
 			this.labelNailsPerDay.Name = "labelNailsPerDay";
 			this.labelNailsPerDay.Size = new System.Drawing.Size(17, 18);
@@ -968,7 +968,7 @@
 			this.labelToolsPerDay.AutoSize = true;
 			this.labelToolsPerDay.BackColor = System.Drawing.Color.Transparent;
 			this.labelToolsPerDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelToolsPerDay.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.labelToolsPerDay.ForeColor = System.Drawing.Color.GreenYellow;
 			this.labelToolsPerDay.Location = new System.Drawing.Point(523, 596);
 			this.labelToolsPerDay.Name = "labelToolsPerDay";
 			this.labelToolsPerDay.Size = new System.Drawing.Size(17, 18);
@@ -1171,10 +1171,10 @@
 			// buttonRepairWall
 			// 
 			this.buttonRepairWall.BackColor = System.Drawing.Color.Transparent;
-			this.buttonRepairWall.FlatAppearance.BorderSize = 5;
-			this.buttonRepairWall.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+			this.buttonRepairWall.BackgroundImage = global::Empire.Properties.Resources.buttonBackground;
+			this.buttonRepairWall.FlatAppearance.BorderSize = 3;
 			this.buttonRepairWall.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.buttonRepairWall.Location = new System.Drawing.Point(608, 593);
+			this.buttonRepairWall.Location = new System.Drawing.Point(588, 511);
 			this.buttonRepairWall.Name = "buttonRepairWall";
 			this.buttonRepairWall.Size = new System.Drawing.Size(90, 23);
 			this.buttonRepairWall.TabIndex = 67;
@@ -1204,7 +1204,7 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackgroundImage = global::Empire.Properties.Resources.osadaFinalna1;
 			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-			this.ClientSize = new System.Drawing.Size(987, 658);
+			this.ClientSize = new System.Drawing.Size(987, 657);
 			this.Controls.Add(this.buttonSaveGame);
 			this.Controls.Add(this.buttonRepairWall);
 			this.Controls.Add(this.labelMoralePoints);
@@ -1258,6 +1258,7 @@
 			this.Controls.Add(this.groupBoxManagePeople);
 			this.Controls.Add(this.labelOrdinaryCitizens);
 			this.Controls.Add(this.pictureBoxHammer);
+			this.MaximumSize = new System.Drawing.Size(1003, 696);
 			this.Name = "EmpireForm";
 			this.Text = "Królestwo";
 			this.Load += new System.EventHandler(this.EmpireForm_Load);

@@ -24,7 +24,7 @@ namespace Empire
 		public Game()
 		{
 			UpdateWeekRequisition();
-			GenerateMonthRequisition();
+			//GenerateMonthRequisition();
 			allCitizens = new List<Citizens>();
 			AddCitizens();
 			events = new List<Event>();
@@ -137,26 +137,27 @@ namespace Empire
 		public void UpdateWeekRequisition()
 		{
 			weekRequisition[0] += Program.random.Next(3000, 5001); // requisition for gold
-			weekRequisition[1] += Program.random.Next(1500, 1801); //requisition for wood
-			weekRequisition[2] += Program.random.Next(1900, 2601); // requisition for ores
-			weekRequisition[3] += Program.random.Next(Program.player.Population * 7, Program.player.Population * 8); //requisition for meat
-			weekRequisition[4] += Program.random.Next(Program.player.Population * 8, Program.player.Population * 10); //requisition for bread
-			weekRequisition[5] += Program.random.Next(2500, 3333); //requisition for nails
-			weekRequisition[6] += Program.random.Next(50, 91); //requisition for tools
-															   //TODO add += dla pozostalych tygodni
-															   //TODO ustawić stałe indexy, pozbyć się magic numbers
+			weekRequisition[1] += Program.random.Next(600, 900); //requisition for wood
+			weekRequisition[2] += Program.random.Next(800, 1100); // requisition for ores
+			weekRequisition[3] += Program.random.Next(Program.player.Population * 3, Program.player.Population * 4); //requisition for meat
+			weekRequisition[4] += Program.random.Next(Program.player.Population * 6, Program.player.Population * 8); //requisition for bread
+			weekRequisition[5] += Program.random.Next(2000, 2888); //requisition for nails
+			weekRequisition[6] += Program.random.Next(5, 30); //requisition for tools
+															  //TODO add += dla pozostalych tygodni
+															  //TODO ustawić stałe indexy, pozbyć się magic numbers
 		}
 
 		/// <summary>
 		/// set month goal
 		/// </summary>
-		public void GenerateMonthRequisition()
-		{
-			for (int i = 0; i < weekRequisition.Length; i++)
-			{
-				monthRequisition[i] = (int)Math.Ceiling((weekRequisition[i] * 4.5));
-			}
-		}
+		//public void GenerateMonthRequisition()
+		//{
+		//	for (int i = 0; i < weekRequisition.Length; i++)
+		//	{
+		//		monthRequisition[i] = (int)Math.Ceiling((weekRequisition[i] * 4.5));
+		//	}
+		//}
+		///TODO czy rozdzielić generate i update nawet jeśli robią dokladnie to samo??
 
 		/// <summary>
 		/// perform action according to previous day
@@ -179,15 +180,15 @@ namespace Empire
 					((IService)citizensGroup).Hire();
 				}
 
-				if ((Program.player.NumberOfDays % 7) == 1)
-				{
-					FinishWeek();
-				}
-
 				citizensGroup.NumberOfMembers = 0;
 			}
 
 			PerformEventIfNeeded();
+
+			if ((Program.player.NumberOfDays % 7) == 1)
+			{
+				FinishWeek();
+			}
 		}
 
 		private void FinishWeek()
@@ -195,6 +196,9 @@ namespace Empire
 			((Builders)allCitizens[indexOfBuilders]).FinishService();
 			((Knights)allCitizens[indexOfKnights]).FinishService();
 
+			if (IsRequisitionCompleted())
+			{
+			}
 			UpdateWeekRequisition();
 
 			if (Program.player.morale > 0)
@@ -205,6 +209,11 @@ namespace Empire
 			{
 				Program.player.Population -= Math.Abs(Program.player.morale * 3);
 			}
+		}
+
+		private bool IsRequisitionCompleted()
+		{
+			return true;//TODO zaimplementowć
 		}
 
 		/// <summary>
@@ -225,7 +234,9 @@ namespace Empire
 		{
 			if (IsEvent(eventProb))
 			{
+				((EmpireForm)Application.OpenForms[0]).timerDay.Stop();
 				MessageBox.Show(events[Program.random.Next(0, events.Count)].ShowInfo());
+				((EmpireForm)Application.OpenForms[0]).timerDay.Start();
 			}
 		}
 	}
