@@ -18,6 +18,7 @@ namespace Empire
 		{
 			counter = 0;
 			InitializeComponent();
+			MessageBox.Show("Aby naprawić mur musisz zebrać jak najwięcej cegieł" + Environment.NewLine + "Im więcej budowniczych, tym więcej czasu na zbieranie");
 			timerMain.Interval = numberOfBuilders * 2000;
 			timerMain.Start();
 			timerBrickPosition.Start();
